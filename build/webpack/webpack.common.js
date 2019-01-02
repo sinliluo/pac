@@ -1,0 +1,1 @@
+var LodashModuleReplacementPlugin = require('loadsh-webpack-plugin');
