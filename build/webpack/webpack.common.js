@@ -22,6 +22,10 @@ module.exports = {
                         plugins: ["transform-runtime", "transform-es2015-arrow-functions"]
                     }
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             }
         ]
     },
