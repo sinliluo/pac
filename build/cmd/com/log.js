@@ -31,3 +31,8 @@ exports.success = function(cnt) {
     console.log(content);
     return this;
 }
+exports.tip = function(cnt) {
+    let content = setColor(cnt, "blue");
+    console.log(content);
+    return this;
+}
