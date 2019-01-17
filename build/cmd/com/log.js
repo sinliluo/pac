@@ -1,27 +1,33 @@
-exports.aa = "456";
-exports.color = "123";
-exports.start = function(cnt) {
+const styles = require('./color');
+const setColor = function (cnt, colorName='default', flag) {
     // console.log('\033[42;30m' + cnt + '\033[0m');
-    console.log('\033[4m' + cnt + '\033[0m');
-    console.log(this);
-    console.log(this.color);
+    let content = styles[colorName] + cnt + styles['default'];
+    return flag ? "\n" + content + "\n" : content;
+}
+exports.start = function(cnt) {
+    let startTmp = `------------------ ${cnt} start ------------------`;
+    let content = setColor(startTmp, "purple", 1);
+    console.log(content);
+    return this;
+}
+exports.end = function(cnt) {
+    let endTmp = `------------------ ${cnt} end ------------------`;
+    let content = setColor(endTmp, "purple", 1);
+    console.log(content);
+    return this;
 }
 
-
-// \033[0m //关闭所有属性
-// \033[1m //设置高亮度
-// \033[4m //下划线
-// \033[5m //闪烁
-// \033[7m //反显
-// \033[8m //消隐
-// \033[nA //光标上移n行
-// \033[nB //光标下移n行
-// \033[nC //光标右移n列
-// \033[nD //光标左移n列
-// \033[y;xH //设置光标位置（y列x行）
-// \033[2J //清屏
-// \033[K //清除从光标到行尾的内容
-
-
-// 字色编号：30黑，31红，32绿，33黄，34蓝，35紫，36深绿，37白色
-// 背景编号：40黑，41红，42绿，43黄，44蓝，45紫，46深绿，47白色
+exports.oneline = function(cnt) {
+    process.stdout.write(setColor(cnt, "yellow", 1));// 表现是： 默认删除最后一行
+    return this;
+}
+exports.error = function(cnt) {
+    let content = setColor(cnt, "red", 1);
+    console.log(content);
+    return this;
+}
+exports.success = function(cnt) {
+    let content = setColor(cnt, "red", 1);
+    console.log(content);
+    return this;
+}
