@@ -1,4 +1,4 @@
-var LodashModuleReplacementPlugin = require('loadsh-webpack-plugin');
+var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const path = require('path');
 const rootPath = path.resolve(__dirname, '../../');
 console.log(path.resolve('./src/app.js'));
