@@ -20,6 +20,9 @@ let arr = args.map(cmd => {
 });
 
 Promise.all(arr)
-    .then((data) => {
-        log.tip(data);
+    .then(() => {
+        log.success("success");
+    })
+    .catch(err => {
+        log.error(err)
     })

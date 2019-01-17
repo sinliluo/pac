@@ -1,4 +1,4 @@
-// var LodashModuleReplacementPlugin = require('loadsh-webpack-plugin');
+var LodashModuleReplacementPlugin = require('loadsh-webpack-plugin');
 const path = require('path');
 const rootPath = path.resolve(__dirname, '../../');
 console.log(path.resolve('./src/app.js'));
@@ -29,11 +29,11 @@ module.exports = {
             }
         ]
     },
-    devServer: {
-        port: 1111,
-        open: true,
-        openPage: 'bin/'
-    },
+    // devServer: {
+    //     port: 1111,
+    //     open: true,
+    //     openPage: 'bin/'
+    // },
     resolve: {
         modules: [
             path.resolve('./src'),
@@ -44,6 +44,6 @@ module.exports = {
         }
     },
     plugins: [
-
+        new LodashModuleReplacementPlugin,
     ]
 };
