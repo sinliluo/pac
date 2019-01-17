@@ -1,7 +1,6 @@
 const log = require('./com/log');
 const executeWebpack = require('./basic/executeWebpack');
 const testConfig = require('../webpack/webpack.test');
-log.tip('加载了test.js');
 
 module.exports = function() {
     // return new Promise((resolve, reject) => {

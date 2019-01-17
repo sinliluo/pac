@@ -5,7 +5,6 @@
   "main": "./src/app.js",
   "license": "MIT",
   "scripts": {
-    "first": "webpack-dev-server --config ./build/webpack/webpack.common.js",
     "dev": "webpack-dev-server --config ./build/webpack/webpack.dev.js",
     "cmd": "node ./build/cmd.js"
   },

@@ -29,11 +29,11 @@ module.exports = {
             }
         ]
     },
-    // devServer: {
-    //     port: 1111,
-    //     open: true,
-    //     openPage: 'bin/'
-    // },
+    devServer: {
+        port: 1111,
+        open: true,
+        openPage: 'bin/'
+    },
     resolve: {
         modules: [
             path.resolve('./src'),
